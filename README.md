@@ -8,7 +8,7 @@
 
 ## Why?
 
-You have hundreds of tabs open that you need to swift through and ain't nobody got time for that.
+You have hundreds of tabs open that you need to sift through and ain't nobody got time for that.
 
 ## Features
 
