@@ -13,7 +13,7 @@ You have hundreds of tabs open that you need to sift through and ain't nobody go
 ## Features
 
 - 🏎 Blazing fast!
-- 💪 Supports Chrome, Brave, & Safari.
+- 💪 Supports Chrome, Brave, Vivaldi, Safari.
 - 🔍 Fuzzy search title & URLs.
 - ✨ Relevant results (last active window).
 - 🌶️ Customizable hotkeys & keywords.
@@ -40,6 +40,7 @@ For example:
 
 - `chrome tabs {query}` - Fetch tabs from Google Chrome and filter based on query.
 - `brave tabs {query}` - Fetch tabs from Brave Browser and filter based on query.
+- `vivaldi tabs {query}` - Fetch tabs from Vivaldi and filter based on query.
 - `safari tabs {query}` - Fetch tabs from Safari and filter based on query.
 
 ### Copy to clipboard
