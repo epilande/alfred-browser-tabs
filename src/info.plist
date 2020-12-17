@@ -839,7 +839,13 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Github Repo: https://github.com/epilande/alfred-browser-tabs
+
+Commands:
+- `chrome tabs {query}` - Fetch tabs from Google Chrome.
+- `brave tabs {query}` - Fetch tabs from Brave Browser.
+- `vivaldi tabs {query}` - Fetch tabs from Vivaldi.
+- `safari tabs {query}` - Fetch tabs from Safari.</string>
 	<key>uidata</key>
 	<dict>
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
@@ -988,6 +994,6 @@
 	<key>version</key>
 	<string>1.0.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/epilande/alfred-browser-tabs</string>
 </dict>
 </plist>
