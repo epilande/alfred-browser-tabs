@@ -350,6 +350,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>./focus-tab.js "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F45500ED-412B-4C62-A7AC-4A29E3F6647F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
@@ -364,6 +387,26 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>0FBBBF7A-CB7C-4719-9199-A7AD390B6198</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>browser</key>
+					<string>Brave Browser</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>C8E50614-8F9B-49CF-8931-2A67367526F4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -419,6 +462,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CB5A1966-6112-4E46-8190-43421806180B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -446,70 +510,6 @@
 			<string>EA96FB48-3A34-4C28-823C-07502A6DB319</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>./focus-tab.js "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>F45500ED-412B-4C62-A7AC-4A29E3F6647F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>browser</key>
-					<string>Brave Browser</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>C8E50614-8F9B-49CF-8931-2A67367526F4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Copied to clipboard</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CB5A1966-6112-4E46-8190-43421806180B</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -861,16 +861,16 @@ Commands:
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
 		<dict>
 			<key>xpos</key>
-			<integer>330</integer>
+			<integer>325</integer>
 			<key>ypos</key>
-			<integer>615</integer>
+			<integer>625</integer>
 		</dict>
 		<key>0C66AA56-A328-4470-B5C2-7A812B8F96C7</key>
 		<dict>
 			<key>xpos</key>
 			<integer>600</integer>
 			<key>ypos</key>
-			<integer>410</integer>
+			<integer>460</integer>
 		</dict>
 		<key>0FBBBF7A-CB7C-4719-9199-A7AD390B6198</key>
 		<dict>
@@ -889,23 +889,23 @@ Commands:
 		<key>2FCC8294-6DBE-4C23-A1F4-4F269DD785A8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>85</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>615</integer>
+			<integer>625</integer>
 		</dict>
 		<key>44CB4B42-4CD6-4B69-B6C1-22E513EA1258</key>
 		<dict>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>255</integer>
 		</dict>
 		<key>66D908A6-B70B-46C5-9BCF-7E46F79D9270</key>
 		<dict>
 			<key>xpos</key>
-			<integer>990</integer>
+			<integer>1075</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>255</integer>
 		</dict>
 		<key>7AC39D00-6734-413D-A922-8B018F1D755C</key>
 		<dict>
@@ -919,49 +919,49 @@ Commands:
 			<key>xpos</key>
 			<integer>80</integer>
 			<key>ypos</key>
-			<integer>380</integer>
+			<integer>435</integer>
 		</dict>
 		<key>7E9CA23F-2FF6-47EF-993D-6157788B9FD4</key>
 		<dict>
 			<key>xpos</key>
 			<integer>325</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>255</integer>
 		</dict>
 		<key>7FE334B2-8D0A-40CF-96C0-334C39924EFC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>605</integer>
+			<integer>600</integer>
 			<key>ypos</key>
-			<integer>645</integer>
+			<integer>655</integer>
 		</dict>
 		<key>970145EF-4ABC-4829-AA79-F48C6B355296</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1175</integer>
+			<integer>1260</integer>
 			<key>ypos</key>
-			<integer>770</integer>
+			<integer>780</integer>
 		</dict>
 		<key>A78D61D6-FD39-40C8-9C2D-169AEBE0C096</key>
 		<dict>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>770</integer>
+			<integer>780</integer>
 		</dict>
 		<key>B4244A14-9629-4620-BA03-C90CEADF68F7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>990</integer>
+			<integer>1075</integer>
 			<key>ypos</key>
-			<integer>770</integer>
+			<integer>780</integer>
 		</dict>
 		<key>C670C61E-A7A8-4A02-9A61-453AAD409775</key>
 		<dict>
 			<key>xpos</key>
 			<integer>325</integer>
 			<key>ypos</key>
-			<integer>380</integer>
+			<integer>435</integer>
 		</dict>
 		<key>C8E50614-8F9B-49CF-8931-2A67367526F4</key>
 		<dict>
@@ -973,30 +973,30 @@ Commands:
 		<key>CB5A1966-6112-4E46-8190-43421806180B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1175</integer>
+			<integer>1260</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>255</integer>
 		</dict>
 		<key>EA96FB48-3A34-4C28-823C-07502A6DB319</key>
 		<dict>
 			<key>xpos</key>
 			<integer>80</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>255</integer>
 		</dict>
 		<key>F21C0900-31CD-4A06-86DE-0CDECA1E0062</key>
 		<dict>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>615</integer>
+			<integer>625</integer>
 		</dict>
 		<key>F45500ED-412B-4C62-A7AC-4A29E3F6647F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>70</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>
