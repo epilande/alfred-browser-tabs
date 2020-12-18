@@ -211,6 +211,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>44CB4B42-4CD6-4B69-B6C1-22E513EA1258</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy url</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>0C66AA56-A328-4470-B5C2-7A812B8F96C7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
