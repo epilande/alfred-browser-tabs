@@ -2,6 +2,17 @@
 
 function run(args) {
   let browser = args[0];
+  if (!Application(browser).running()) {
+    return JSON.stringify({
+      items: [
+        {
+          title: `${browser} is not running`,
+          subtitle: `Press enter to launch ${browser}`,
+        },
+      ],
+    });
+  }
+
   let chrome = Application(browser);
   chrome.includeStandardAdditions = true;
   let windowCount = chrome.windows.length;
