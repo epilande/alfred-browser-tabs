@@ -47,6 +47,13 @@ For example:
 
 Holding the `CTRL` key while selecting an item will copy the selected tab URL to your clipboard.
 
+## More workflows
+
+- 🤫 [alfred-be-quiet](https://github.com/epilande/alfred-be-quiet) - Workflow to automatically pause audio/video playing.
+- 🔐 [alfred-wifi-password](https://github.com/epilande/alfred-wifi-password) - Get Wi-Fi password from Keychain.
+- 🗝 [alfred-password-generator](https://github.com/epilande/alfred-password-generator) - Workflow to generate passwords.
+- 🎨 [alfred-prettier-clipboard](https://github.com/epilande/alfred-prettier-clipboard) - Format code in your clipboard with Prettier.
+
 ## License
 
 [MIT License](https://oss.ninja/mit/epilande/)
