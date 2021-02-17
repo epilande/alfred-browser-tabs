@@ -36,7 +36,7 @@ function run(args) {
         windowIndex: w,
         tabIndex: t,
         arg: `${w},${t},${url}`,
-        match: `${title} ${matchUrl}`,
+        match: `${title} ${matchUrl.replaceAll(/[^\w]/g, " ")}`,
       };
     }
   }
