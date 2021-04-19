@@ -36,6 +36,7 @@ function run(args) {
         windowIndex: w,
         tabIndex: t,
         arg: `${w},${t},${url}`,
+        quicklookurl: url,
         match: `${title} ${matchUrl}`,
       };
     }
