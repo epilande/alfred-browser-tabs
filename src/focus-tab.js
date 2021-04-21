@@ -9,8 +9,8 @@ function run(args) {
   let windowIndex = parseInt(arg1);
   let tabIndex = parseInt(arg2);
 
-  chrome.activate();
   chrome.windows[windowIndex].visible = true;
   chrome.windows[windowIndex].activeTabIndex = tabIndex + 1;
   chrome.windows[windowIndex].index = 1;
+  chrome.activate();
 }
