@@ -35,9 +35,9 @@ function run(args) {
         subtitle: url,
         windowIndex: w,
         tabIndex: t,
-        arg: `${w},${t},${url}`,
         quicklookurl: url,
-        match: `${title} ${matchUrl}`,
+        arg: `${w},${t},${url}`,
+        match: `${title} ${matchUrl.replaceAll(/[^\w]/g, " ")}`,
       };
     }
   }
