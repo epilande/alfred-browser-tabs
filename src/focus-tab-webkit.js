@@ -4,10 +4,10 @@ function run(args) {
   let safari = Application("Safari");
   let query = args[0];
   let [windowIndex, url] = query.split(",");
+  let window = safari.windows[windowIndex]();
 
   function getTab() {
     let result;
-    let window = safari.windows[windowIndex];
     if (window) {
       for (let index in window.tabs) {
         let tab = window.tabs[index];
@@ -23,5 +23,8 @@ function run(args) {
 
   let tab = getTab();
   safari.activate();
-  safari.windows[windowIndex].currentTab = tab;
+  window.currentTab = tab;
+  // Force tab window to front
+  window.visible = false;
+  window.visible = true;
 }
