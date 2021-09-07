@@ -106,6 +106,29 @@
 				<false/>
 			</dict>
 		</array>
+		<key>45BA3C52-3F5F-462D-8F18-DE516A900E69</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>44CB4B42-4CD6-4B69-B6C1-22E513EA1258</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy url</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>66D908A6-B70B-46C5-9BCF-7E46F79D9270</key>
 		<array>
 			<dict>
@@ -235,6 +258,32 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F45500ED-412B-4C62-A7AC-4A29E3F6647F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F45500ED-412B-4C62-A7AC-4A29E3F6647F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E94113C4-541E-4E5E-A595-C56E5141DCCF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45BA3C52-3F5F-462D-8F18-DE516A900E69</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -661,6 +710,106 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>edge tabs</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading tabs...</string>
+				<key>script</key>
+				<string>./list-tabs.js "Microsoft Edge"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>list-tabs</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Edge - Tabs</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>45BA3C52-3F5F-462D-8F18-DE516A900E69</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E94113C4-541E-4E5E-A595-C56E5141DCCF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>browser</key>
+					<string>Microsoft Edge</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -863,7 +1012,7 @@ Commands:
 			<key>xpos</key>
 			<integer>325</integer>
 			<key>ypos</key>
-			<integer>625</integer>
+			<integer>840</integer>
 		</dict>
 		<key>0C66AA56-A328-4470-B5C2-7A812B8F96C7</key>
 		<dict>
@@ -891,7 +1040,7 @@ Commands:
 			<key>xpos</key>
 			<integer>80</integer>
 			<key>ypos</key>
-			<integer>625</integer>
+			<integer>840</integer>
 		</dict>
 		<key>44CB4B42-4CD6-4B69-B6C1-22E513EA1258</key>
 		<dict>
@@ -899,6 +1048,13 @@ Commands:
 			<integer>890</integer>
 			<key>ypos</key>
 			<integer>255</integer>
+		</dict>
+		<key>45BA3C52-3F5F-462D-8F18-DE516A900E69</key>
+		<dict>
+			<key>xpos</key>
+			<integer>325</integer>
+			<key>ypos</key>
+			<integer>615</integer>
 		</dict>
 		<key>66D908A6-B70B-46C5-9BCF-7E46F79D9270</key>
 		<dict>
@@ -933,28 +1089,28 @@ Commands:
 			<key>xpos</key>
 			<integer>600</integer>
 			<key>ypos</key>
-			<integer>655</integer>
+			<integer>870</integer>
 		</dict>
 		<key>970145EF-4ABC-4829-AA79-F48C6B355296</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1260</integer>
 			<key>ypos</key>
-			<integer>780</integer>
+			<integer>995</integer>
 		</dict>
 		<key>A78D61D6-FD39-40C8-9C2D-169AEBE0C096</key>
 		<dict>
 			<key>xpos</key>
 			<integer>890</integer>
 			<key>ypos</key>
-			<integer>780</integer>
+			<integer>995</integer>
 		</dict>
 		<key>B4244A14-9629-4620-BA03-C90CEADF68F7</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1075</integer>
 			<key>ypos</key>
-			<integer>780</integer>
+			<integer>995</integer>
 		</dict>
 		<key>C670C61E-A7A8-4A02-9A61-453AAD409775</key>
 		<dict>
@@ -977,6 +1133,20 @@ Commands:
 			<key>ypos</key>
 			<integer>255</integer>
 		</dict>
+		<key>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</key>
+		<dict>
+			<key>xpos</key>
+			<integer>600</integer>
+			<key>ypos</key>
+			<integer>645</integer>
+		</dict>
+		<key>E94113C4-541E-4E5E-A595-C56E5141DCCF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>80</integer>
+			<key>ypos</key>
+			<integer>615</integer>
+		</dict>
 		<key>EA96FB48-3A34-4C28-823C-07502A6DB319</key>
 		<dict>
 			<key>xpos</key>
@@ -989,7 +1159,7 @@ Commands:
 			<key>xpos</key>
 			<integer>890</integer>
 			<key>ypos</key>
-			<integer>625</integer>
+			<integer>840</integer>
 		</dict>
 		<key>F45500ED-412B-4C62-A7AC-4A29E3F6647F</key>
 		<dict>
