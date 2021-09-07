@@ -1003,6 +1003,7 @@
 Commands:
 - `chrome tabs {query}` - Fetch tabs from Google Chrome.
 - `brave tabs {query}` - Fetch tabs from Brave Browser.
+- `edge tabs {query}` - Fetch tabs from Microsoft Edge.
 - `vivaldi tabs {query}` - Fetch tabs from Vivaldi.
 - `safari tabs {query}` - Fetch tabs from Safari.</string>
 	<key>uidata</key>
@@ -1169,10 +1170,8 @@ Commands:
 			<integer>70</integer>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.0.3</string>
+	<string>1.0.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/epilande/alfred-browser-tabs</string>
 </dict>
