@@ -32,8 +32,9 @@ function run(args) {
         subtitle: url,
         windowIndex: w,
         tabIndex: t,
+        quicklookurl: url,
         arg: `${w},${url || title}`,
-        match: `${title} ${matchUrl}`,
+        match: `${title} ${matchUrl.replaceAll(/[^\w]/g, " ")}`,
       };
     }
   }
