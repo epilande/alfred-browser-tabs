@@ -37,7 +37,10 @@ function run(args) {
         tabIndex: t,
         quicklookurl: url,
         arg: `${w},${t},${url}`,
-        match: `${title} ${decodeURIComponent(matchUrl).replace(/[^\w]/g, " ")}`,
+        match: `${title} ${decodeURIComponent(matchUrl).replace(
+          /[^\w]/g,
+          " ",
+        )}`,
       };
     }
   }
