@@ -1,10 +1,12 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(args) {
-  let safari = Application("Safari");
+  ObjC.import("stdlib");
+  let browser = $.getenv("browser");
+  let app = Application(browser);
   let query = args[0];
   let [windowIndex, url] = query.split(",");
-  let window = safari.windows[windowIndex]();
+  let window = app.windows[windowIndex]();
 
   function getTab() {
     let result;
@@ -22,7 +24,7 @@ function run(args) {
   }
 
   let tab = getTab();
-  safari.activate();
+  app.activate();
   window.currentTab = tab;
   // Force tab window to front
   window.visible = false;
