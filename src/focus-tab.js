@@ -37,7 +37,7 @@ function getBrowserAndWindows(windowIndex) {
 /**
  * Returns the system window matching the browser window title, if found. Else returns undefined.
  *
- * In most cases, the system window at the given index should match the browser window, and we can
+ * In most cases, the system window at the same index should match the browser window, and we can
  * return that. However, things like alerts or dialogs can cause the system windows and browser
  * windows to differ in order and/or count.
  */
@@ -74,16 +74,15 @@ function getSystemWindowByIndex(
 /**
  * Returns the first system window with the expected title prefix, or undefined if not found.
  */
-function getSystemWindowByTitle(browserProcess, expectedWindowTitlePrefix) {
+function getSystemWindowByTitle(browserProcess, expectedTitlePrefix) {
   const systemWindows = browserProcess.windows();
-  const matchingSystemWindows = systemWindows.filter((systemWindow) =>
-    hasExpectedTitle(systemWindow, expectedWindowTitlePrefix),
+  return systemWindows.find((systemWindow) =>
+    hasExpectedTitle(systemWindow, expectedTitlePrefix),
   );
-  return matchingSystemWindows[0];
 }
 
-function hasExpectedTitle(systemWindow, expectedWindowTitlePrefix) {
-  return systemWindow.title().startsWith(expectedWindowTitlePrefix);
+function hasExpectedTitle(systemWindow, expectedTitlePrefix) {
+  return systemWindow.title().startsWith(expectedTitlePrefix);
 }
 
 /**
