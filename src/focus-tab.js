@@ -1,13 +1,12 @@
 #!/usr/bin/env osascript -l JavaScript
-
 function run(args) {
   ObjC.import("stdlib");
 
   const { windowIndex, tabIndex } = getWindowAndTabIndex(args);
-  const { browser, browserWindow, systemWindow } =
+  const { browser, browserWindow, maybeSystemWindow } =
     getBrowserAndWindows(windowIndex);
 
-  activateTab(browser, browserWindow, systemWindow, tabIndex);
+  activateTab(browser, browserWindow, maybeSystemWindow, tabIndex);
 }
 
 /**
@@ -16,36 +15,83 @@ function run(args) {
 function getWindowAndTabIndex(args) {
   const query = args[0];
   const [windowIndex, tabIndex] = query.split(",").map((x) => parseInt(x));
-  console.log(`windowIndex: ${windowIndex}, tabIndex: ${tabIndex}`);
   return { windowIndex, tabIndex };
 }
 
 /**
- * Returns the browser application object, along with the specific browser window and the system
- * window object for the given window index.
- *
- * We define `browserWindow` and `systemWindow` here at the same time, before the window ordering
- * gets affected by `activateTab` and `windowIndex` is no longer accurate.
+ * Returns the browser application object, along with the specific browser window, and the system
+ * window object (if found), for the given window index.
  */
 function getBrowserAndWindows(windowIndex) {
   const browserName = $.getenv("browser");
   const browser = Application(browserName);
   const browserWindow = browser.windows[windowIndex];
-  const systemWindow = getSystemWindow(browserName, windowIndex);
-  return { browser, browserWindow, systemWindow };
+  const maybeSystemWindow = getSystemWindow(
+    browserName,
+    windowIndex,
+    browserWindow.title(),
+  );
+  return { browser, browserWindow, maybeSystemWindow };
 }
 
-function getSystemWindow(browserName, windowIndex) {
+/**
+ * Returns the system window matching the browser window title, if found. Else returns undefined.
+ *
+ * In most cases, the system window at the given index should match the browser window, and we can
+ * return that. However, things like alerts or dialogs can cause the system windows and browser
+ * windows to differ in order and/or count.
+ */
+function getSystemWindow(browserName, windowIndex, browserWindowTitle) {
   const browserProcess = Application("System Events").processes[browserName];
-  return browserProcess.windows[windowIndex];
+  const expectedTitlePrefix = `${browserWindowTitle} - `;
+  const systemWindowByIndex = getSystemWindowByIndex(
+    browserProcess,
+    windowIndex,
+    expectedTitlePrefix,
+  );
+  if (!systemWindowByIndex) {
+    return getSystemWindowByTitle(browserProcess, expectedTitlePrefix);
+  }
+  return systemWindowByIndex;
+}
+
+/**
+ * Returns the system window at the given index if it has the expected title prefix, else returns
+ * undefined.
+ */
+function getSystemWindowByIndex(
+  browserProcess,
+  windowIndex,
+  expectedTitlePrefix,
+) {
+  const systemWindow = browserProcess.windows[windowIndex];
+  if (!systemWindow || !hasExpectedTitle(systemWindow, expectedTitlePrefix)) {
+    return undefined;
+  }
+  return systemWindow;
+}
+
+/**
+ * Returns the first system window with the expected title prefix, or undefined if not found.
+ */
+function getSystemWindowByTitle(browserProcess, expectedWindowTitlePrefix) {
+  const systemWindows = browserProcess.windows();
+  const matchingSystemWindows = systemWindows.filter((systemWindow) =>
+    hasExpectedTitle(systemWindow, expectedWindowTitlePrefix),
+  );
+  return matchingSystemWindows[0];
+}
+
+function hasExpectedTitle(systemWindow, expectedWindowTitlePrefix) {
+  return systemWindow.title().startsWith(expectedWindowTitlePrefix);
 }
 
 /**
  * Activates the tab at the given index in the browser window, focuses the window, and activates the
  * browser application.
  */
-function activateTab(browser, browserWindow, systemWindow, tabIndex) {
+function activateTab(browser, browserWindow, maybeSystemWindow, tabIndex) {
   browserWindow.activeTabIndex = tabIndex + 1;
-  systemWindow.actions["AXRaise"].perform();
+  maybeSystemWindow?.actions["AXRaise"].perform();
   browser.activate();
 }
