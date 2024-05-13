@@ -39,7 +39,8 @@ function getBrowserAndWindows(windowIndex) {
  *
  * In most cases, the system window at the same index should match the browser window, and we can
  * return that. However, things like alerts or dialogs can cause the system windows and browser
- * windows to differ in order and/or count.
+ * windows to differ in order and/or count, in which case we manually search for the system window
+ * with the expected title prefix.
  */
 function getSystemWindow(browserName, windowIndex, browserWindowTitle) {
   const browserProcess = Application("System Events").processes[browserName];
