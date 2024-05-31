@@ -22,7 +22,7 @@ function run(args) {
       for (let i = 0; i < chrome.windows[widx].spaces[sidx].tabs.length; i++) {
         let k = `${widx}-${sidx}-${i}`;
         let title = chrome.windows[widx].spaces[sidx].tabs[i].title();
-        let url = chrome.windows[widx].spaces[sidx].tabs[i]. url();
+        let url = chrome.windows[widx].spaces[sidx].tabs[i].url();
         allTabs[k] = {title, url};
       }
     }
