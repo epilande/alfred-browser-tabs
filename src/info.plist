@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.epilande.browser-tabs</string>
+	<key>category</key>
+	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
@@ -358,7 +360,7 @@
 	<key>createdby</key>
 	<string>Emmanuel Pilande</string>
 	<key>description</key>
-	<string>Search browser tabs from Chrome, Brave, &amp; Safari</string>
+	<string>Search browser tabs from Chrome, Brave, Safari, etc..</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -1002,46 +1004,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>B4244A14-9629-4620-BA03-C90CEADF68F7</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Copied to clipboard</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>970145EF-4ABC-4829-AA79-F48C6B355296</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1091,6 +1053,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B4244A14-9629-4620-BA03-C90CEADF68F7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1122,6 +1103,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>970145EF-4ABC-4829-AA79-F48C6B355296</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
@@ -1148,7 +1150,8 @@ Commands:
 - `brave tabs {query}` - Fetch tabs from Brave Browser.
 - `edge tabs {query}` - Fetch tabs from Microsoft Edge.
 - `vivaldi tabs {query}` - Fetch tabs from Vivaldi.
-- `safari tabs {query}` - Fetch tabs from Safari.</string>
+- `safari tabs {query}` - Fetch tabs from Safari.
+- `orion tabs {query}` - Fetch tabs from Orion.</string>
 	<key>uidata</key>
 	<dict>
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
@@ -1210,9 +1213,9 @@ Commands:
 		<key>7ABACCB4-CB3E-4944-ACF4-5A13D66C5688</key>
 		<dict>
 			<key>xpos</key>
-			<real>330</real>
+			<real>325</real>
 			<key>ypos</key>
-			<real>1025</real>
+			<real>1015</real>
 		</dict>
 		<key>7AC39D00-6734-413D-A922-8B018F1D755C</key>
 		<dict>
@@ -1247,21 +1250,21 @@ Commands:
 			<key>xpos</key>
 			<real>1260</real>
 			<key>ypos</key>
-			<real>995</real>
+			<real>1015</real>
 		</dict>
 		<key>A78D61D6-FD39-40C8-9C2D-169AEBE0C096</key>
 		<dict>
 			<key>xpos</key>
 			<real>890</real>
 			<key>ypos</key>
-			<real>970</real>
+			<real>1015</real>
 		</dict>
 		<key>B4244A14-9629-4620-BA03-C90CEADF68F7</key>
 		<dict>
 			<key>xpos</key>
 			<real>1075</real>
 			<key>ypos</key>
-			<real>995</real>
+			<real>1015</real>
 		</dict>
 		<key>C670C61E-A7A8-4A02-9A61-453AAD409775</key>
 		<dict>
@@ -1289,7 +1292,7 @@ Commands:
 			<key>xpos</key>
 			<real>600</real>
 			<key>ypos</key>
-			<real>1055</real>
+			<real>1045</real>
 		</dict>
 		<key>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</key>
 		<dict>
@@ -1317,7 +1320,7 @@ Commands:
 			<key>xpos</key>
 			<real>80</real>
 			<key>ypos</key>
-			<real>1025</real>
+			<real>1015</real>
 		</dict>
 		<key>F21C0900-31CD-4A06-86DE-0CDECA1E0062</key>
 		<dict>
@@ -1339,7 +1342,7 @@ Commands:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.5</string>
+	<string>1.0.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/epilande/alfred-browser-tabs</string>
 </dict>
