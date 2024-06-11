@@ -1,7 +1,7 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(args) {
-  let browser = "Arc"
+  let browser = "Arc";
   if (!Application(browser).running()) {
     return JSON.stringify({
       items: [
@@ -23,7 +23,7 @@ function run(args) {
         let k = `${widx}-${sidx}-${i}`;
         let title = chrome.windows[widx].spaces[sidx].tabs[i].title();
         let url = chrome.windows[widx].spaces[sidx].tabs[i].url();
-        allTabs[k] = {title, url};
+        allTabs[k] = { title, url };
       }
     }
   }
@@ -42,17 +42,11 @@ function run(args) {
       spaceIndex: s,
       quicklookurl: url,
       arg: `${w},${s},${t},${url}`,
-      match: `${title} ${decodeURIComponent(matchUrl).replace(
-        /[^\w]/g,
-        " ",
-      )}`,
+      match: `${title} ${decodeURIComponent(matchUrl).replace(/[^\w]/g, " ")}`,
     };
     acc.push(o);
     return acc;
   }, []);
 
-  //this.console.log(JSON.stringify({ all }));
   return JSON.stringify({ items });
-
 }
-

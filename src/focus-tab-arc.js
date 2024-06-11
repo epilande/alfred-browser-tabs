@@ -13,5 +13,5 @@ function run(args) {
 
   chrome.windows[windowIndex].spaces[spaceIndex].focus();
   chrome.windows[windowIndex].spaces[spaceIndex].tabs[tabIndex].select();
-  chrome.activate()
+  chrome.activate();
 }

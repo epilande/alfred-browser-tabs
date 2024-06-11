@@ -433,7 +433,7 @@
 	<key>createdby</key>
 	<string>Emmanuel Pilande</string>
 	<key>description</key>
-	<string>Search browser tabs from Chrome, Brave, Safari, etc..</string>
+	<string>Search browser tabs from Chrome, Arc, Brave, Safari, etc..</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -1236,7 +1236,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Loading tabs...</string>
 				<key>script</key>
 				<string>./list-tabs-arc.js "Arc"</string>
 				<key>scriptargtype</key>
@@ -1364,7 +1364,7 @@
 				<key>script</key>
 				<string>function run() {
   let query = "{query}";
-  let [, url] = query.split(",");
+  let [, , , url] = query.split(",");
 
   return url
 }</string>
@@ -1411,7 +1411,8 @@ Commands:
 - `edge tabs {query}` - Fetch tabs from Microsoft Edge.
 - `vivaldi tabs {query}` - Fetch tabs from Vivaldi.
 - `safari tabs {query}` - Fetch tabs from Safari.
-- `orion tabs {query}` - Fetch tabs from Orion.</string>
+- `orion tabs {query}` - Fetch tabs from Orion.
+- `arc tabs {query}` - Fetch tabs from Arc.</string>
 	<key>uidata</key>
 	<dict>
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
@@ -1426,7 +1427,7 @@ Commands:
 			<key>xpos</key>
 			<real>600</real>
 			<key>ypos</key>
-			<real>1220</real>
+			<real>1270</real>
 		</dict>
 		<key>0C66AA56-A328-4470-B5C2-7A812B8F96C7</key>
 		<dict>
@@ -1447,7 +1448,7 @@ Commands:
 			<key>xpos</key>
 			<real>1260</real>
 			<key>ypos</key>
-			<real>1350</real>
+			<real>1405</real>
 		</dict>
 		<key>1EF5C902-0F47-47F1-BCBB-5BA273DE5101</key>
 		<dict>
@@ -1482,7 +1483,7 @@ Commands:
 			<key>xpos</key>
 			<real>80</real>
 			<key>ypos</key>
-			<real>1190</real>
+			<real>1240</real>
 		</dict>
 		<key>66D908A6-B70B-46C5-9BCF-7E46F79D9270</key>
 		<dict>
@@ -1496,7 +1497,7 @@ Commands:
 			<key>xpos</key>
 			<real>1075</real>
 			<key>ypos</key>
-			<real>1350</real>
+			<real>1405</real>
 		</dict>
 		<key>7ABACCB4-CB3E-4944-ACF4-5A13D66C5688</key>
 		<dict>
@@ -1545,7 +1546,7 @@ Commands:
 			<key>xpos</key>
 			<real>890</real>
 			<key>ypos</key>
-			<real>1190</real>
+			<real>1240</real>
 		</dict>
 		<key>A78D61D6-FD39-40C8-9C2D-169AEBE0C096</key>
 		<dict>
@@ -1559,7 +1560,7 @@ Commands:
 			<key>xpos</key>
 			<real>890</real>
 			<key>ypos</key>
-			<real>1350</real>
+			<real>1405</real>
 		</dict>
 		<key>B4244A14-9629-4620-BA03-C90CEADF68F7</key>
 		<dict>
@@ -1601,7 +1602,7 @@ Commands:
 			<key>xpos</key>
 			<real>325</real>
 			<key>ypos</key>
-			<real>1190</real>
+			<real>1240</real>
 		</dict>
 		<key>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</key>
 		<dict>
@@ -1651,7 +1652,7 @@ Commands:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.6</string>
+	<string>1.0.7</string>
 	<key>webaddress</key>
 	<string>https://github.com/epilande/alfred-browser-tabs</string>
 </dict>
