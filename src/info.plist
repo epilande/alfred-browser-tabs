@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.epilande.browser-tabs</string>
+	<key>category</key>
+	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
@@ -127,11 +129,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>59F36362-84B7-4C37-8B93-FD615FB38E48</key>
+		<key>66D908A6-B70B-46C5-9BCF-7E46F79D9270</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E29898AA-9B79-41C7-B83A-3CEAADF75868</string>
+				<string>CB5A1966-6112-4E46-8190-43421806180B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -140,11 +142,21 @@
 				<false/>
 			</dict>
 		</array>
-		<key>66D908A6-B70B-46C5-9BCF-7E46F79D9270</key>
+		<key>7ABACCB4-CB3E-4944-ACF4-5A13D66C5688</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CB5A1966-6112-4E46-8190-43421806180B</string>
+				<string>A78D61D6-FD39-40C8-9C2D-169AEBE0C096</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D323F518-CB9B-43B2-A0F2-DD3D3A7FFCDF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -277,21 +289,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>C9720D9D-EA8E-4687-A88D-2039FB27B8D4</key>
+		<key>D323F518-CB9B-43B2-A0F2-DD3D3A7FFCDF</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>44CB4B42-4CD6-4B69-B6C1-22E513EA1258</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string>Copy url</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>59F36362-84B7-4C37-8B93-FD615FB38E48</string>
+				<string>F21C0900-31CD-4A06-86DE-0CDECA1E0062</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -339,11 +341,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>F83B4220-9B90-4580-A11C-150525D4FD07</key>
+		<key>ED9A84AE-70AB-49EC-81C6-DC9B9481B8A8</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C9720D9D-EA8E-4687-A88D-2039FB27B8D4</string>
+				<string>7ABACCB4-CB3E-4944-ACF4-5A13D66C5688</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -352,11 +354,13 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F21C0900-31CD-4A06-86DE-0CDECA1E0062</key>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>Emmanuel Pilande</string>
 	<key>description</key>
-	<string>Search browser tabs from Chrome, Brave, &amp; Safari</string>
+	<string>Search browser tabs from Chrome, Brave, Safari, etc..</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -427,6 +431,8 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -711,7 +717,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>list-tabs</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -843,129 +849,6 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>arc tabs</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading tabs...</string>
-				<key>script</key>
-				<string>./list-tabs-arc.js "Arc"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Arc Tabs</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>C9720D9D-EA8E-4687-A88D-2039FB27B8D4</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>1</integer>
-				<key>hotmod</key>
-				<integer>917504</integer>
-				<key>hotstring</key>
-				<string>S</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>F83B4220-9B90-4580-A11C-150525D4FD07</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>./focus-tab-arc.js "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E29898AA-9B79-41C7-B83A-3CEAADF75868</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>browser</key>
-					<string>Arc</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>59F36362-84B7-4C37-8B93-FD615FB38E48</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1121,6 +1004,55 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>orion tabs</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading tabs...</string>
+				<key>script</key>
+				<string>./list-tabs-webkit.js "Orion"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>list-tabs</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Orion - Tabs</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7ABACCB4-CB3E-4944-ACF4-5A13D66C5688</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -1136,6 +1068,37 @@
 			<string>B4244A14-9629-4620-BA03-C90CEADF68F7</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>ED9A84AE-70AB-49EC-81C6-DC9B9481B8A8</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1158,6 +1121,26 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>browser</key>
+					<string>Orion</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>D323F518-CB9B-43B2-A0F2-DD3D3A7FFCDF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Github Repo: https://github.com/epilande/alfred-browser-tabs
@@ -1167,7 +1150,8 @@ Commands:
 - `brave tabs {query}` - Fetch tabs from Brave Browser.
 - `edge tabs {query}` - Fetch tabs from Microsoft Edge.
 - `vivaldi tabs {query}` - Fetch tabs from Vivaldi.
-- `safari tabs {query}` - Fetch tabs from Safari.</string>
+- `safari tabs {query}` - Fetch tabs from Safari.
+- `orion tabs {query}` - Fetch tabs from Orion.</string>
 	<key>uidata</key>
 	<dict>
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
@@ -1175,7 +1159,7 @@ Commands:
 			<key>xpos</key>
 			<real>325</real>
 			<key>ypos</key>
-			<real>910</real>
+			<real>840</real>
 		</dict>
 		<key>0C66AA56-A328-4470-B5C2-7A812B8F96C7</key>
 		<dict>
@@ -1203,7 +1187,7 @@ Commands:
 			<key>xpos</key>
 			<real>80</real>
 			<key>ypos</key>
-			<real>910</real>
+			<real>840</real>
 		</dict>
 		<key>44CB4B42-4CD6-4B69-B6C1-22E513EA1258</key>
 		<dict>
@@ -1219,19 +1203,19 @@ Commands:
 			<key>ypos</key>
 			<real>615</real>
 		</dict>
-		<key>59F36362-84B7-4C37-8B93-FD615FB38E48</key>
-		<dict>
-			<key>xpos</key>
-			<real>630</real>
-			<key>ypos</key>
-			<real>770</real>
-		</dict>
 		<key>66D908A6-B70B-46C5-9BCF-7E46F79D9270</key>
 		<dict>
 			<key>xpos</key>
 			<real>1075</real>
 			<key>ypos</key>
 			<real>255</real>
+		</dict>
+		<key>7ABACCB4-CB3E-4944-ACF4-5A13D66C5688</key>
+		<dict>
+			<key>xpos</key>
+			<real>325</real>
+			<key>ypos</key>
+			<real>1015</real>
 		</dict>
 		<key>7AC39D00-6734-413D-A922-8B018F1D755C</key>
 		<dict>
@@ -1259,28 +1243,28 @@ Commands:
 			<key>xpos</key>
 			<real>600</real>
 			<key>ypos</key>
-			<real>940</real>
+			<real>870</real>
 		</dict>
 		<key>970145EF-4ABC-4829-AA79-F48C6B355296</key>
 		<dict>
 			<key>xpos</key>
 			<real>1260</real>
 			<key>ypos</key>
-			<real>1065</real>
+			<real>1015</real>
 		</dict>
 		<key>A78D61D6-FD39-40C8-9C2D-169AEBE0C096</key>
 		<dict>
 			<key>xpos</key>
 			<real>890</real>
 			<key>ypos</key>
-			<real>1065</real>
+			<real>1015</real>
 		</dict>
 		<key>B4244A14-9629-4620-BA03-C90CEADF68F7</key>
 		<dict>
 			<key>xpos</key>
 			<real>1075</real>
 			<key>ypos</key>
-			<real>1065</real>
+			<real>1015</real>
 		</dict>
 		<key>C670C61E-A7A8-4A02-9A61-453AAD409775</key>
 		<dict>
@@ -1296,13 +1280,6 @@ Commands:
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
-		<key>C9720D9D-EA8E-4687-A88D-2039FB27B8D4</key>
-		<dict>
-			<key>xpos</key>
-			<real>330</real>
-			<key>ypos</key>
-			<real>740</real>
-		</dict>
 		<key>CB5A1966-6112-4E46-8190-43421806180B</key>
 		<dict>
 			<key>xpos</key>
@@ -1310,12 +1287,12 @@ Commands:
 			<key>ypos</key>
 			<real>255</real>
 		</dict>
-		<key>E29898AA-9B79-41C7-B83A-3CEAADF75868</key>
+		<key>D323F518-CB9B-43B2-A0F2-DD3D3A7FFCDF</key>
 		<dict>
 			<key>xpos</key>
-			<real>890</real>
+			<real>600</real>
 			<key>ypos</key>
-			<real>740</real>
+			<real>1045</real>
 		</dict>
 		<key>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</key>
 		<dict>
@@ -1338,12 +1315,19 @@ Commands:
 			<key>ypos</key>
 			<real>255</real>
 		</dict>
+		<key>ED9A84AE-70AB-49EC-81C6-DC9B9481B8A8</key>
+		<dict>
+			<key>xpos</key>
+			<real>80</real>
+			<key>ypos</key>
+			<real>1015</real>
+		</dict>
 		<key>F21C0900-31CD-4A06-86DE-0CDECA1E0062</key>
 		<dict>
 			<key>xpos</key>
 			<real>890</real>
 			<key>ypos</key>
-			<real>910</real>
+			<real>840</real>
 		</dict>
 		<key>F45500ED-412B-4C62-A7AC-4A29E3F6647F</key>
 		<dict>
@@ -1352,20 +1336,13 @@ Commands:
 			<key>ypos</key>
 			<real>70</real>
 		</dict>
-		<key>F83B4220-9B90-4580-A11C-150525D4FD07</key>
-		<dict>
-			<key>xpos</key>
-			<real>80</real>
-			<key>ypos</key>
-			<real>740</real>
-		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.5</string>
+	<string>1.0.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/epilande/alfred-browser-tabs</string>
 </dict>
