@@ -13,7 +13,7 @@ You have hundreds of tabs open that you need to sift through and ain't nobody go
 ## Features
 
 - 🏎 Blazing fast!
-- 💪 Supports Chrome, Arc, Brave, Edge, Vivaldi, Safari, Orion.
+- 💪 Supports Chrome, Arc, Brave, Edge, Vivaldi, Safari, Orion, Comet.
 - 🔍 Fuzzy search title & URLs.
 - ✨ Relevant results (last active window).
 - 🌶️ Customizable hotkeys & keywords.
@@ -45,6 +45,7 @@ For example:
 - `safari tabs {query}` - Fetch tabs from Safari and filter based on query.
 - `orion tabs {query}` - Fetch tabs from Orion and filter based on query.
 - `arc tabs {query}` - Fetch tabs from Arc and filter based on query.
+- `comet tabs {query}` - Fetch tabs from Comet and filter based on query.
 
 ### Copy to clipboard
 

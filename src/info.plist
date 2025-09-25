@@ -433,7 +433,7 @@
 	<key>createdby</key>
 	<string>Emmanuel Pilande</string>
 	<key>description</key>
-	<string>Search browser tabs from Chrome, Arc, Brave, Safari, etc..</string>
+	<string>Search browser tabs from Chrome, Arc, Brave, Safari, Comet, etc..</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -1412,7 +1412,8 @@ Commands:
 - `vivaldi tabs {query}` - Fetch tabs from Vivaldi.
 - `safari tabs {query}` - Fetch tabs from Safari.
 - `orion tabs {query}` - Fetch tabs from Orion.
-- `arc tabs {query}` - Fetch tabs from Arc.</string>
+- `arc tabs {query}` - Fetch tabs from Arc.
+- `comet tabs {query}` - Fetch tabs from Comet.
 	<key>uidata</key>
 	<dict>
 		<key>05291F67-A2F4-49A2-A3AA-23923B919638</key>
