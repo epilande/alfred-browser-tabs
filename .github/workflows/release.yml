@@ -17,6 +17,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Stamp version in info.plist
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          python3 - <<EOF
+          import plistlib
+          with open("src/info.plist", "rb") as f:
+              p = plistlib.load(f)
+          p["version"] = "$VERSION"
+          with open("src/info.plist", "wb") as f:
+              plistlib.dump(p, f)
+          print(f"Stamped version: $VERSION")
+          EOF
+
       - name: Build .alfredworkflow
         run: |
           cd src
