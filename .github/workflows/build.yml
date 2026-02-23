@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Package workflow
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build .alfredworkflow
+        run: |
+          cd src
+          zip -r ../Browser-Tabs.alfredworkflow . -x "*.DS_Store"
+          cd ..
+          echo "✅ Built Browser-Tabs.alfredworkflow ($(du -sh Browser-Tabs.alfredworkflow | cut -f1))"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Browser-Tabs.alfredworkflow
+          path: Browser-Tabs.alfredworkflow
+          retention-days: 7

@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & release
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Stamp version in info.plist
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          plutil -replace version -string "$VERSION" src/info.plist
+          echo "Stamped version: $VERSION"
+
+      - name: Build .alfredworkflow
+        run: |
+          cd src
+          zip -r ../Browser-Tabs.alfredworkflow . -x "*.DS_Store"
+          cd ..
+          echo "✅ Built Browser-Tabs.alfredworkflow ($(du -sh Browser-Tabs.alfredworkflow | cut -f1))"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: Browser-Tabs.alfredworkflow
