@@ -11,7 +11,7 @@ permissions:
 jobs:
   release:
     name: Build & release
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -20,15 +20,8 @@ jobs:
       - name: Stamp version in info.plist
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
-          python3 - <<EOF
-          import plistlib
-          with open("src/info.plist", "rb") as f:
-              p = plistlib.load(f)
-          p["version"] = "$VERSION"
-          with open("src/info.plist", "wb") as f:
-              plistlib.dump(p, f)
-          print(f"Stamped version: $VERSION")
-          EOF
+          plutil -replace version -string "$VERSION" src/info.plist
+          echo "Stamped version: $VERSION"
 
       - name: Build .alfredworkflow
         run: |
