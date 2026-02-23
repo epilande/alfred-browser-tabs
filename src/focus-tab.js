@@ -1,12 +1,15 @@
 #!/usr/bin/env osascript -l JavaScript
+
 function run(args) {
   ObjC.import("stdlib");
 
   const { windowIndex, tabIndex } = getWindowAndTabIndex(args);
+  const url = args[0].split(",")[2];
   const { browser, browserWindow, maybeSystemWindow } =
     getBrowserAndWindows(windowIndex);
 
   activateTab(browser, browserWindow, maybeSystemWindow, tabIndex);
+  updateTabsFile(browser, url, windowIndex, tabIndex);
 }
 
 /**
@@ -94,4 +97,98 @@ function activateTab(browser, browserWindow, maybeSystemWindow, tabIndex) {
   browserWindow.activeTabIndex = tabIndex + 1;
   maybeSystemWindow?.actions["AXRaise"].perform();
   browser.activate();
+}
+
+function updateTabsFile(browser, urlFocused, windowIndex, tabIndex) {
+
+  //Read the original file into tabsSeenBefore
+  let app = Application.currentApplication();
+  app.includeStandardAdditions = true;
+  var tabsFilePath = `./tabs-${$.getenv("browser")}.tsv`.toString();
+  let tabsSeenBefore = {};
+  try {
+    var savedTabs = app.read(Path(tabsFilePath), { usingDelimiter: "\n" });
+    for (let t = 0; t < savedTabs.length; t++ ) {
+      let savedTabInfo = savedTabs[t].split("\t");
+      tabsSeenBefore[savedTabInfo[0]] = {
+        "id": savedTabInfo[0],
+        "timesFocused": Number(savedTabInfo[1]),
+        "timesSeen": Number(savedTabInfo[2]),
+        "lastFocused": Number(savedTabInfo[3])
+      }
+    }
+  }
+  catch(e) {
+    console.log(e.toString());
+  }
+
+  /**
+   * This block does a few things:
+   * Find all open tabs
+   * Increment the times they were seen by one
+   * Increments the chosen tab's times focused by one
+   * Removes tabs that have been deleted
+   * Adds tabs that have not been seen before
+  */
+  let windowCount = browser.windows.length;
+  let chosenId = null;
+  let tabsTitle =
+    $.getenv("browser") === "Safari"
+      ? browser.windows.tabs.name()
+      : browser.windows.tabs.title();
+  let tabIds = browser.windows.tabs.id();
+  let ids = [];
+  for (let w = 0; w < windowCount; w++) {
+    for (let t = 0; t < tabsTitle[w].length; t++) {
+      ids.push(tabIds[w][t] || "");
+      if (w == windowIndex && t == tabIndex) {
+        chosenId = tabIds[w][t] || "";
+      }
+    }
+  }
+  let tabsInBrowser = {};
+  for (let u = 0; u < ids.length; u++) {
+    let id = ids[u];
+    tabsInBrowser[id] = tabsSeenBefore.hasOwnProperty(id) ?
+                          {
+                            "id": id,
+                            "timesFocused": tabsSeenBefore[id].timesFocused,
+                            "timesSeen": tabsSeenBefore[id].timesSeen + 1,
+                            "lastFocused": tabsSeenBefore[id].lastFocused
+                          }
+                          : 
+                          {
+                            "id": id,
+                            "timesFocused": 0,
+                            "timesSeen": 1,
+                            "lastFocused": Number.MAX_VALUE
+                          };
+  }
+
+  if (tabsInBrowser.hasOwnProperty(chosenId)) {
+    tabsInBrowser[chosenId] = {
+                            "id": chosenId,
+                            "timesFocused": tabsInBrowser[chosenId].timesFocused + 1,
+                            "timesSeen": tabsInBrowser[chosenId].timesSeen,
+                            "lastFocused": Date.now()
+                          };
+  }
+  
+  //Convert to csv
+  let tsvList = []
+  for (tab in tabsInBrowser) {
+    tsvList.push(`${tabsInBrowser[tab].id}\t${tabsInBrowser[tab].timesFocused}\t${tabsInBrowser[tab].timesSeen}\t${tabsInBrowser[tab].lastFocused}`);
+  }
+  let tsv = tsvList.join("\n").toString();
+
+  //Write to file
+  try {
+    var openedFile = app.openForAccess(Path(tabsFilePath), { writePermission: true });
+    app.setEof(openedFile, { to: 0 });
+    app.write(tsv, { to: openedFile, startingAt: app.getEof(openedFile) });
+    app.closeAccess(openedFile);
+  } catch(error) {
+    app.closeAccess(openedFile);
+  }
+
 }
