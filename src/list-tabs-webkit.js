@@ -1,51 +1,48 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(args) {
-  let browser = args[0];
-  if (!Application(browser).running()) {
-    return JSON.stringify({
-      items: [
-        {
-          title: `${browser} is not running`,
-          subtitle: `Press enter to launch ${browser}`,
-        },
-      ],
-    });
+  ObjC.import("stdlib");
+  let browser = $.getenv("browser");
+  let app = Application(browser);
+  let query = args[0];
+  let [windowIndex, url] = query.split(",");
+  let windows = app.windows;
+
+  function getTab(window) {
+    if (!window) return null;
+    for (let index in window.tabs) {
+      let tab = window.tabs[index];
+      let tabURL = tab.url() || tab.name();
+      if (tabURL && tabURL.startsWith(url)) {
+        return tab;
+      }
+    }
+    return null;
   }
 
-  let chrome = Application(browser);
-  chrome.includeStandardAdditions = true;
-  let windowCount = chrome.windows.length;
-  let tabsTitle = chrome.windows.tabs.name();
-  let tabsUrl = chrome.windows.tabs.url();
-  let tabsMap = {};
+  let targetWindow = null;
+  let targetTab = null;
 
-  for (let w = 0; w < windowCount; w++) {
-    for (let t = 0; t < tabsTitle[w].length; t++) {
-      let url = tabsUrl[w][t] || "";
-      let matchUrl = url.replace(/(^\w+:|^)\/\//, "");
-      let title = tabsTitle[w][t] || matchUrl;
-
-      tabsMap[url] = {
-        title,
-        url,
-        subtitle: url,
-        windowIndex: w,
-        tabIndex: t,
-        quicklookurl: url,
-        arg: `${w},${url || title}`,
-        match: `${title} ${decodeURIComponent(matchUrl).replace(
-          /[^\w]/g,
-          " ",
-        )}`,
-      };
+  // Look for the target tab in any window
+  for (let i = 0; i < windows.length; i++) {
+    let win = windows[i];
+    let tab = getTab(win);
+    if (tab) {
+      targetWindow = win;
+      targetTab = tab;
+      break;
     }
   }
 
-  let items = Object.keys(tabsMap).reduce((acc, url) => {
-    acc.push(tabsMap[url]);
-    return acc;
-  }, []);
-
-  return JSON.stringify({ items });
+  // If tab is found, switch to it without toggling visibility
+  if (targetTab) {
+    targetWindow.currentTab = targetTab;
+    app.activate(); // Bring the browser to the front
+  } else {
+    // Open new tab if the target tab doesn't exist
+    let newWindow = windows[windowIndex]();
+    newWindow.tabs.push({ url: url });
+    newWindow.currentTab = newWindow.tabs[newWindow.tabs.length - 1];
+    app.activate();
+  }
 }
