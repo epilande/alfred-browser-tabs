@@ -1,17 +1,31 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(args) {
-  ObjC.import("stdlib");
-  let browser = $.getenv("browser");
-  let chrome = Application(browser);
   let query = args[0];
-  let [arg1, arg2, arg3] = query.split(",");
 
-  let windowIndex = parseInt(arg1);
-  let spaceIndex = parseInt(arg2);
-  let tabIndex = parseInt(arg3);
+  // Arg format: "<tabId>,<url>" — tabId is everything before the first comma
+  let commaIdx = query.indexOf(",");
+  let tabId = commaIdx !== -1 ? query.substring(0, commaIdx) : query;
 
-  chrome.windows[windowIndex].spaces[spaceIndex].focus();
-  chrome.windows[windowIndex].spaces[spaceIndex].tabs[tabIndex].select();
-  chrome.activate();
+  let chrome = Application("Arc");
+  let windowCount = chrome.windows.length;
+
+  for (let w = 0; w < windowCount; w++) {
+    try {
+      // Batch-fetch IDs for all tabs in this window, then select by ID.
+      // Avoids space-index-based selection which breaks when spaces API
+      // changes across Arc versions.
+      let tabProps = chrome.windows[w].tabs.properties();
+
+      for (let t = 0; t < tabProps.length; t++) {
+        if (String(tabProps[t].id) === String(tabId)) {
+          chrome.windows[w].tabs[t].select();
+          chrome.activate();
+          return;
+        }
+      }
+    } catch (_) {
+      // Skip windows that don't support tab enumeration
+    }
+  }
 }
