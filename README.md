@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-  <strong>Search browser tabs from Chrome, Arc, Brave, Safari, etc..</strong>
+  <strong>Search browser tabs from Chrome, Arc, Brave, Helium, Safari, etc..</strong>
 </p>
 
 ## Why?
@@ -13,7 +13,7 @@ You have hundreds of tabs open that you need to sift through and ain't nobody go
 ## Features
 
 - 🏎 Blazing fast!
-- 💪 Supports Chrome, Arc, Brave, Edge, Vivaldi, Safari, Orion.
+- 💪 Supports Chrome, Arc, Brave, Edge, Vivaldi, Helium, Safari, Orion.
 - 🔍 Fuzzy search title & URLs.
 - ✨ Relevant results (last active window).
 - 🌶️ Customizable hotkeys & keywords.
@@ -42,6 +42,7 @@ For example:
 - `brave tabs {query}` - Fetch tabs from Brave Browser and filter based on query.
 - `edge tabs {query}` - Fetch tabs from Microsoft Edge and filter based on query.
 - `vivaldi tabs {query}` - Fetch tabs from Vivaldi and filter based on query.
+- `helium tabs {query}` - Fetch tabs from Helium and filter based on query.
 - `safari tabs {query}` - Fetch tabs from Safari and filter based on query.
 - `orion tabs {query}` - Fetch tabs from Orion and filter based on query.
 - `arc tabs {query}` - Fetch tabs from Arc and filter based on query.
