@@ -264,6 +264,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>895217D4-C519-4846-9687-B8D1AC251AF0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D221C9F4-775D-4E6F-B91C-8C66F7EFC8B5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A78D61D6-FD39-40C8-9C2D-169AEBE0C096</key>
 		<array>
 			<dict>
@@ -339,6 +352,29 @@
 				<false/>
 			</dict>
 		</array>
+		<key>D221C9F4-775D-4E6F-B91C-8C66F7EFC8B5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>951111A3-6909-4E69-8DB2-A225AADAFD23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>44CB4B42-4CD6-4B69-B6C1-22E513EA1258</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy url</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>D323F518-CB9B-43B2-A0F2-DD3D3A7FFCDF</key>
 		<array>
 			<dict>
@@ -376,6 +412,19 @@
 			</dict>
 		</array>
 		<key>E5B3D963-2A31-4859-AAA7-D8ED845B0B29</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F45500ED-412B-4C62-A7AC-4A29E3F6647F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>951111A3-6909-4E69-8DB2-A225AADAFD23</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -433,7 +482,7 @@
 	<key>createdby</key>
 	<string>Emmanuel Pilande</string>
 	<key>description</key>
-	<string>Search browser tabs from Chrome, Arc, Brave, Safari, etc..</string>
+	<string>Search browser tabs from Chrome, Arc, Brave, Helium, Safari, etc..</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -822,6 +871,104 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>0C66AA56-A328-4470-B5C2-7A812B8F96C7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>895217D4-C519-4846-9687-B8D1AC251AF0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>helium tabs</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading tabs...</string>
+				<key>script</key>
+				<string>./list-tabs.js "Helium"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>list-tabs</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Helium - Tabs</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D221C9F4-775D-4E6F-B91C-8C66F7EFC8B5</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>browser</key>
+					<string>Helium</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>951111A3-6909-4E69-8DB2-A225AADAFD23</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1410,6 +1557,7 @@ Commands:
 - `brave tabs {query}` - Fetch tabs from Brave Browser.
 - `edge tabs {query}` - Fetch tabs from Microsoft Edge.
 - `vivaldi tabs {query}` - Fetch tabs from Vivaldi.
+- `helium tabs {query}` - Fetch tabs from Helium.
 - `safari tabs {query}` - Fetch tabs from Safari.
 - `orion tabs {query}` - Fetch tabs from Orion.
 - `arc tabs {query}` - Fetch tabs from Arc.</string>
@@ -1520,6 +1668,13 @@ Commands:
 			<key>ypos</key>
 			<real>435</real>
 		</dict>
+		<key>895217D4-C519-4846-9687-B8D1AC251AF0</key>
+		<dict>
+			<key>xpos</key>
+			<real>80</real>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
 		<key>7E9CA23F-2FF6-47EF-993D-6157788B9FD4</key>
 		<dict>
 			<key>xpos</key>
@@ -1582,6 +1737,20 @@ Commands:
 			<real>600</real>
 			<key>ypos</key>
 			<real>250</real>
+		</dict>
+		<key>951111A3-6909-4E69-8DB2-A225AADAFD23</key>
+		<dict>
+			<key>xpos</key>
+			<real>600</real>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
+		<key>D221C9F4-775D-4E6F-B91C-8C66F7EFC8B5</key>
+		<dict>
+			<key>xpos</key>
+			<real>325</real>
+			<key>ypos</key>
+			<real>530</real>
 		</dict>
 		<key>CB5A1966-6112-4E46-8190-43421806180B</key>
 		<dict>
@@ -1652,7 +1821,7 @@ Commands:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.7</string>
+	<string>1.0.8</string>
 	<key>webaddress</key>
 	<string>https://github.com/epilande/alfred-browser-tabs</string>
 </dict>
